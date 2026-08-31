@@ -33,7 +33,7 @@ shadow_enabled = true
 [node name="Duck" parent="." unique_id=815761097 instance=ExtResource("2_83ytx")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1452149435]
-transform = Transform3D(1, 0, 0, 0, 0.82415956, 0.5663577, 0, -0.5663577, 0.82415956, 0, 1.537291, 2.4945385)
+transform = Transform3D(1, 0, 0, 0, 0.68391794, 0.729559, 0, -0.729559, 0.68391794, 0, 3.8326135, 3.6833715)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1461913242]
 material_override = SubResource("StandardMaterial3D_rckyl")

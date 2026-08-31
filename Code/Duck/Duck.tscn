@@ -29,7 +29,7 @@ albedo_color = Color(0.97928363, 0.74675786, 0.8104903, 1)
 radius = 0.036132813
 height = 0.13282013
 
-[node name="Duck" type="Node2D" unique_id=815761097]
+[node name="Duck" type="Node3D" unique_id=412467626]
 script = ExtResource("1_lm42s")
 
 [node name="Body" type="MeshInstance3D" parent="." unique_id=1886083691]
