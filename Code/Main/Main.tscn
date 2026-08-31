@@ -3,7 +3,38 @@
 [ext_resource type="Script" uid="uid://ckplnjj5kkyta" path="res://Main/Main.gd" id="1_lxy7q"]
 [ext_resource type="PackedScene" uid="uid://bimiowbq37tmt" path="res://Duck/Duck.tscn" id="2_83ytx"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_83ytx"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_amygn"]
+sky_material = SubResource("ProceduralSkyMaterial_83ytx")
+
+[sub_resource type="Environment" id="Environment_ps1la"]
+background_mode = 2
+sky = SubResource("Sky_amygn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rckyl"]
+albedo_color = Color(0.2666077, 0.5339965, 0.39391467, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rawk2"]
+size = Vector2(50, 50)
+
 [node name="Main" type="Node" unique_id=1391425956]
 script = ExtResource("1_lxy7q")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1769971861]
+environment = SubResource("Environment_ps1la")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=453940782]
+transform = Transform3D(0.8474938, -0.14151797, -0.5115927, 0.53001636, 0.17307961, 0.8301364, -0.028932964, -0.97468776, 0.22169067, 0, 13.969847, 17.180618)
+shadow_enabled = true
+
 [node name="Duck" parent="." unique_id=815761097 instance=ExtResource("2_83ytx")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1452149435]
+transform = Transform3D(1, 0, 0, 0, 0.82415956, 0.5663577, 0, -0.5663577, 0.82415956, 0, 1.537291, 2.4945385)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1461913242]
+material_override = SubResource("StandardMaterial3D_rckyl")
+mesh = SubResource("PlaneMesh_rawk2")
