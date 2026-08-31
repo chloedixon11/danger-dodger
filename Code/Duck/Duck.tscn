@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bimiowbq37tmt"]
+
+[ext_resource type="Script" uid="uid://bvp3leqc0hci5" path="res://Duck/Duck.gd" id="1_lm42s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rawk2"]
+
+[node name="Duck" type="Node2D" unique_id=815761097]
+script = ExtResource("1_lm42s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1886083691]
+mesh = SubResource("BoxMesh_rawk2")
