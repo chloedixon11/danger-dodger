@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dkvdtdch46qd1" path="res://Vehicle/Vehicle.gd" id="1_25uyk"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rawk2"]
+size = Vector3(0.5649414, 0.73895264, 0.9976196)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25uyk"]
 albedo_color = Color(0.84314203, 0.5057147, 0.80312365, 1)
 
@@ -17,22 +20,28 @@ height = 0.8408203
 left_to_right = 0.0
 size = Vector3(0.3, 0.15, 0.6)
 
-[node name="Vehicle" type="Node3D" unique_id=732389107]
+[node name="Vehicle" type="Area3D" unique_id=1002617338]
 script = ExtResource("1_25uyk")
 
-[node name="Body" type="MeshInstance3D" parent="." unique_id=1875670607]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=715496988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036621094, 0.37228394, -0.0011901855)
+shape = SubResource("BoxShape3D_rawk2")
+
+[node name="Graphics" type="Node3D" parent="." unique_id=732389107]
+
+[node name="Body" type="MeshInstance3D" parent="Graphics" unique_id=1875670607]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26439607, 0)
 material_override = SubResource("StandardMaterial3D_25uyk")
 mesh = SubResource("BoxMesh_rawk2")
 
-[node name="Wheels Back" type="MeshInstance3D" parent="." unique_id=1702581426]
+[node name="Wheels Back" type="MeshInstance3D" parent="Graphics" unique_id=1702581426]
 transform = Transform3D(0.0023124951, -0.9999973, 0, 0.9999973, 0.0023124951, 0, 0, 0, 1, 0, 0, 0.32630944)
 mesh = SubResource("CylinderMesh_rawk2")
 
-[node name="Wheels Front" type="MeshInstance3D" parent="." unique_id=515383828]
+[node name="Wheels Front" type="MeshInstance3D" parent="Graphics" unique_id=515383828]
 transform = Transform3D(0.0023124951, -0.9999973, 0, 0.9999973, 0.0023124951, 0, 0, 0, 1, 0, 0, -0.3357255)
 mesh = SubResource("CylinderMesh_rawk2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=817412467]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Graphics" unique_id=817412467]
 transform = Transform3D(-0.0045169876, 0, 0.9999898, 0, 1, 0, -0.9999898, 0, -0.0045169876, -0.001580927, 0.6175381, -0.34999236)
 mesh = SubResource("PrismMesh_rawk2")

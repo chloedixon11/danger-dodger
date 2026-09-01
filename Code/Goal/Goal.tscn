@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c4v0peqkg130j"]
+
+[ext_resource type="Script" uid="uid://0yhi8snlp42x" path="res://Goal/Goal.gd" id="1_prjlw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rawk2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ng8ot"]
+albedo_color = Color(0.5558661, 0.38809672, 0.32013786, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rawk2"]
+top_radius = 0.045410156
+bottom_radius = 0.045410156
+height = 1.0869141
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prjlw"]
+albedo_color = Color(0.50619864, 0.080240615, 0.004818995, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rawk2"]
+size = Vector3(0.41015625, 0.44921875, 0.001)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbkht"]
+albedo_color = Color(0.5058824, 0.078431375, 0.003921569, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_rawk2"]
+left_to_right = 1.0
+size = Vector3(0.3, 0.3, 0.001)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kaxx0"]
+albedo_color = Color(0.5058824, 0.078431375, 0.003921569, 1)
+
+[node name="Goal" type="Area3D" unique_id=1585610551]
+script = ExtResource("1_prjlw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=415624707]
+shape = SubResource("BoxShape3D_rawk2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1228294713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5161133, 0)
+material_override = SubResource("StandardMaterial3D_ng8ot")
+mesh = SubResource("CylinderMesh_rawk2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1187556007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19393313, 0.79636484, -0.014031768)
+material_override = SubResource("StandardMaterial3D_prjlw")
+mesh = SubResource("BoxMesh_rawk2")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=848479799]
+transform = Transform3D(-0.0024378002, -0.9999971, 0, 0.9999971, -0.0024378002, 0, 0, 0, 1, -0.48254728, 0.8686917, -0.012857094)
+material_override = SubResource("StandardMaterial3D_mbkht")
+mesh = SubResource("PrismMesh_rawk2")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=535841612]
+transform = Transform3D(0.99998087, 0.0061962865, 0, -0.0061962865, 0.99998087, 0, 0, 0, 1, -0.48254728, 0.72537875, -0.007917047)
+material_override = SubResource("StandardMaterial3D_kaxx0")
+mesh = SubResource("PrismMesh_rawk2")
