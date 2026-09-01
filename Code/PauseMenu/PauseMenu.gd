@@ -8,6 +8,7 @@ class_name PauseMenu
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	hide()
 	play_button.pressed.connect(on_play_button_pressed)
 	quit_button.pressed.connect(on_quit_button_pressed)
 
@@ -24,6 +25,11 @@ func toggle_pause():
 	else:
 		show()
 		get_tree().paused = true
+
+func game_over(message: String):
+	title.text = message
+	play_button.text = "Play Again?"
+	show()
 
 	
 func on_play_button_pressed():
