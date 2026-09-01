@@ -1,26 +1,20 @@
 extends Node
 class_name Main
 
-@onready var goal_0: Goal = $Goals/Goal0
-@onready var goal_1: Goal = $Goals/Goal1
-@onready var goal_2: Goal = $Goals/Goal2
-@onready var goal_3: Goal = $Goals/Goal3
-@onready var goal_4: Goal = $Goals/Goal4
+const TRAFFIC_TIME = preload("res://Levels/TrafficTime.tscn")
+const WATER_WORLD = preload("res://Levels/WaterWorld.tscn")
+
 @onready var pause_menu: PauseMenu = $PauseMenu
 
-var goals: Array
+var level: Level = null
 
 func _ready() -> void:
-	goals.append(goal_0)
-	goals.append(goal_1)
-	goals.append(goal_2)
-	goals.append(goal_3)
-	goals.append(goal_4)
+	level = TRAFFIC_TIME.instantiate()
+	level.main = self
+	add_child(level)
 
-func check_game_over():
-	for goal in goals:
-		if not goal.occupied:
-			print("Game not over")
-			return
-	print("Game Over")
-	pause_menu.game_over("Game Over")
+func next_level():
+	level.queue_free()
+	level = WATER_WORLD.instantiate()
+	level.main = self
+	add_child(level)

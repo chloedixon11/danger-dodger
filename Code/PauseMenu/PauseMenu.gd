@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 
 	
 func toggle_pause():
+	title.text = "Paused"
 	if get_tree().paused:
 		hide()
 		get_tree().paused = false
@@ -28,7 +29,7 @@ func toggle_pause():
 
 func game_over(message: String):
 	title.text = message
-	play_button.text = "Play Again?"
+	play_button.text = "Next Level"
 	show()
 
 	

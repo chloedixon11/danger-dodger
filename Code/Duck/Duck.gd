@@ -6,12 +6,12 @@ class_name Duck
 @onready var lives_ui: Label = $UI/VBox/LivesUI
 
 @export var lives: int = 3
+@export var level: Level
 
 var leap_distance: float = 1.0
 var weight: float = 1.0
 var weight_speed: float = 5.0
 
-var main: Main
 var spawning_point: Vector3
 var current_spot: Vector3 
 var next_spot: Vector3 
@@ -22,8 +22,8 @@ func _ready() -> void:
 	spawning_point = position
 	current_spot = position
 	next_spot = position
-	main = get_parent()
 	
+	level = get_parent()
 	update_lives(0)
 
 
@@ -87,7 +87,7 @@ func on_entered(other_area: Area3D) -> void:
 		respawn()
 		print("Goal!!!")
 		other_area.set_occupied()
-		main.check_game_over()
+		level.check_level_over()
 
 	if other_area is Vehicle:
 		update_lives(-1)
