@@ -33,35 +33,38 @@ height = 0.13282013
 transform = Transform3D(-0.9999951, 0, -0.00313535, 0, 1, 0, 0.00313535, 0, -0.9999951, 0, 0, 0)
 script = ExtResource("1_lm42s")
 
-[node name="Body" type="MeshInstance3D" parent="." unique_id=1886083691]
+[node name="Graphics" type="Node3D" parent="." unique_id=1289733284]
+
+[node name="Body" type="MeshInstance3D" parent="Graphics" unique_id=1886083691]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36822402, 0)
 mesh = SubResource("BoxMesh_rawk2")
+skeleton = NodePath("../..")
 
-[node name="Beak" type="MeshInstance3D" parent="Body" unique_id=546150467]
+[node name="Beak" type="MeshInstance3D" parent="Graphics/Body" unique_id=546150467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0024778843, 0.010592699, 0.522591)
 material_override = SubResource("StandardMaterial3D_s2nsp")
 mesh = SubResource("BoxMesh_rckyl")
 
-[node name="Tail" type="MeshInstance3D" parent="Body" unique_id=2136634243]
+[node name="Tail" type="MeshInstance3D" parent="Graphics/Body" unique_id=2136634243]
 transform = Transform3D(0.9995423, 0.030251779, 0, -0.030251779, 0.9995423, 0, 0, 0, 1, 0.005335996, -0.28178978, -0.45145082)
 mesh = SubResource("BoxMesh_s2nsp")
 
-[node name="Left Eye" type="MeshInstance3D" parent="Body" unique_id=1219599316]
+[node name="Left Eye" type="MeshInstance3D" parent="Graphics/Body" unique_id=1219599316]
 transform = Transform3D(0.0054771565, -0.9926246, -0.121105224, 0.9999849, 0.005517769, 0, 0.0006682306, -0.121103376, 0.9926397, 0.2819621, 0.18569714, 0.2921418)
 material_override = SubResource("StandardMaterial3D_rckyl")
 mesh = SubResource("CylinderMesh_rawk2")
 
-[node name="Right Eye" type="MeshInstance3D" parent="Body" unique_id=597311850]
+[node name="Right Eye" type="MeshInstance3D" parent="Graphics/Body" unique_id=597311850]
 transform = Transform3D(0.0054771565, -0.9926246, -0.121105224, 0.9999849, 0.005517769, 0, 0.0006682306, -0.121103376, 0.9926397, -0.26360685, 0.18569714, 0.2921418)
 material_override = SubResource("StandardMaterial3D_rckyl")
 mesh = SubResource("CylinderMesh_rawk2")
 
-[node name="Right Blush" type="MeshInstance3D" parent="Body" unique_id=1815946320]
+[node name="Right Blush" type="MeshInstance3D" parent="Graphics/Body" unique_id=1815946320]
 transform = Transform3D(-0.13726856, -0.017327875, -0.99038225, 0.9905219, 0.0025254297, -0.13733205, 0.004880801, -0.99984664, 0.016816983, -0.5188743, 0.060479015, 0.19550256)
 material_override = SubResource("StandardMaterial3D_lomqb")
 mesh = SubResource("CapsuleMesh_s2nsp")
 
-[node name="Left Blush" type="MeshInstance3D" parent="Body" unique_id=549608500]
+[node name="Left Blush" type="MeshInstance3D" parent="Graphics/Body" unique_id=549608500]
 transform = Transform3D(-0.13726856, -0.017327875, -0.99038225, 0.9905219, 0.0025254297, -0.13733205, 0.004880801, -0.99984664, 0.016816983, 0.52065563, 0.06690207, 0.2339627)
 material_override = SubResource("StandardMaterial3D_lomqb")
 mesh = SubResource("CapsuleMesh_s2nsp")

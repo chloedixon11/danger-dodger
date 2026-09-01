@@ -47,6 +47,7 @@ transform = Transform3D(-0.9999874, 0, 0.00501598, 0, 1, 0, -0.00501598, 0, -0.9
 [node name="Ground" type="MeshInstance3D" parent="." unique_id=1461913242]
 material_override = SubResource("StandardMaterial3D_rckyl")
 mesh = SubResource("PlaneMesh_rawk2")
+metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=776095818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.092991)
@@ -59,10 +60,13 @@ mesh = SubResource("CylinderMesh_rckyl")
 skeleton = NodePath("../..")
 
 [node name="Lane" parent="." unique_id=1649162153 instance=ExtResource("2_amygn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.2096472)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -2.2096472)
 
 [node name="Vehicle" parent="Lane" unique_id=732389107 instance=ExtResource("4_ps1la")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Lane2" parent="." unique_id=1798718671 instance=ExtResource("2_amygn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2096472)
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, -3.2096472)
+
+[node name="Vehicle" parent="Lane2" unique_id=909842682 instance=ExtResource("4_ps1la")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
