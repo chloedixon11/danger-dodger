@@ -1,19 +1,20 @@
 extends Node3D
 class_name Duck
 
+var leap_distance = 1.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("move_left"):
-		position.x -= 1
+		position.x -= leap_distance
 		
 	if Input.is_action_just_pressed("move_right"):
-		position.x += 1
+		position.x += leap_distance
 		
 	if Input.is_action_just_pressed("move_up"):
-		position.z -= 1
+		position.z -= leap_distance
 	
 	if Input.is_action_just_pressed("move_down"):
-		position.z += 1
+		position.z += leap_distance
 		
 	pass

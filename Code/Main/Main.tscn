@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ckplnjj5kkyta" path="res://Main/Main.gd" id="1_lxy7q"]
 [ext_resource type="PackedScene" uid="uid://bimiowbq37tmt" path="res://Duck/Duck.tscn" id="2_83ytx"]
+[ext_resource type="PackedScene" uid="uid://berl535au27hs" path="res://Lane/Lane.tscn" id="2_amygn"]
+[ext_resource type="PackedScene" uid="uid://d10bdq3u7df63" path="res://Vehicle/Vehicle.tscn" id="4_ps1la"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_83ytx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,6 +22,10 @@ albedo_color = Color(0.2666077, 0.5339965, 0.39391467, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_rawk2"]
 size = Vector2(50, 50)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_rckyl"]
+top_radius = 0.123535156
+bottom_radius = 0.123535156
+
 [node name="Main" type="Node" unique_id=1391425956]
 script = ExtResource("1_lxy7q")
 
@@ -32,9 +38,31 @@ shadow_enabled = true
 
 [node name="Duck" parent="." unique_id=815761097 instance=ExtResource("2_83ytx")]
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1452149435]
-transform = Transform3D(1, 0, 0, 0, 0.68391794, 0.729559, 0, -0.729559, 0.68391794, 0, 3.8326135, 3.6833715)
+[node name="Rig" type="Node3D" parent="Duck" unique_id=345773725]
+transform = Transform3D(1, 2.3283064e-10, 0, 0, 0.5838813, -0.8118391, 0, 0.8118391, 0.5838813, -0.005545419, 0, 1.7686676)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1461913242]
+[node name="Camera3D" type="Camera3D" parent="Duck/Rig" unique_id=1452149435]
+transform = Transform3D(-0.9999874, 0, 0.00501598, 0, 1, 0, -0.00501598, 0, -0.9999874, 0.014142856, -2.9802322e-08, -8.473373)
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1461913242]
 material_override = SubResource("StandardMaterial3D_rckyl")
 mesh = SubResource("PlaneMesh_rawk2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=776095818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.092991)
+mesh = SubResource("CylinderMesh_rckyl")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Ground" unique_id=1016124010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.272135)
+mesh = SubResource("CylinderMesh_rckyl")
+skeleton = NodePath("../..")
+
+[node name="Lane" parent="." unique_id=1649162153 instance=ExtResource("2_amygn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.2096472)
+
+[node name="Vehicle" parent="Lane" unique_id=732389107 instance=ExtResource("4_ps1la")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Lane2" parent="." unique_id=1798718671 instance=ExtResource("2_amygn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2096472)
