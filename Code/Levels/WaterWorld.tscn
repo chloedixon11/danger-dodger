@@ -37,15 +37,15 @@ environment = SubResource("Environment_fj61p")
 transform = Transform3D(0.9747612, -0.19334027, 0.111625046, 0, 0.49999997, 0.86602545, -0.2232501, -0.844168, 0.48738056, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Goals" type="Node3D" parent="." unique_id=1109272453]
+[node name="GoalsNode" type="Node3D" parent="." unique_id=1109272453]
 
-[node name="Goal0" parent="Goals" unique_id=1585610551 instance=ExtResource("1_rwfof")]
+[node name="Goal0" parent="GoalsNode" unique_id=1585610551 instance=ExtResource("1_rwfof")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.11776)
 
-[node name="Goal1" parent="Goals" unique_id=1298276653 instance=ExtResource("1_rwfof")]
+[node name="Goal1" parent="GoalsNode" unique_id=1298276653 instance=ExtResource("1_rwfof")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -16.11776)
 
-[node name="Goal2" parent="Goals" unique_id=935295361 instance=ExtResource("1_rwfof")]
+[node name="Goal2" parent="GoalsNode" unique_id=935295361 instance=ExtResource("1_rwfof")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -16.11776)
 
 [node name="Lane2" parent="." unique_id=1649162153 instance=ExtResource("2_5yycp")]

@@ -6,7 +6,8 @@ class_name Duck
 @onready var lives_ui: Label = $UI/VBox/LivesUI
 
 @export var lives: int = 3
-@export var level: Level
+
+var level: Level
 
 var leap_distance: float = 1.0
 var weight: float = 1.0
@@ -64,10 +65,13 @@ func _process(delta: float) -> void:
 		current_spot = next_spot
 			
 	
-	position = lerp(current_spot, next_spot, weight)
+	
 	if current_spot == spawning_point:
 		graphics.show()
 		collider.disabled = false
+	else:
+		position = lerp(current_spot, next_spot, weight)
+	
 
 func update_lives(delta_lives: int):
 	lives += delta_lives
@@ -93,3 +97,9 @@ func on_entered(other_area: Area3D) -> void:
 		update_lives(-1)
 		respawn()
 		print(lives)
+	
+	if other_area is Waterway:
+		update_lives(-1)
+		respawn()
+		print("Drowned!")
+		

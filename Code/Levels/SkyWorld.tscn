@@ -6,6 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://d10bdq3u7df63" path="res://Vehicle/Vehicle.tscn" id="4_s5kmm"]
 [ext_resource type="PackedScene" uid="uid://bimiowbq37tmt" path="res://Duck/Duck.tscn" id="5_u6y4n"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g4bax"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_e4jwm"]
+sky_material = SubResource("ProceduralSkyMaterial_g4bax")
+
+[sub_resource type="Environment" id="Environment_612c4"]
+background_mode = 2
+sky = SubResource("Sky_e4jwm")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eh51w"]
 albedo_color = Color(0.2666077, 0.5339965, 0.39391467, 1)
 
@@ -19,9 +30,16 @@ bottom_radius = 0.123535156
 [node name="SkyWorld" type="Node3D" unique_id=2045553894]
 script = ExtResource("1_g4bax")
 
-[node name="Goals" type="Node3D" parent="." unique_id=1763357328]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1840473444]
+environment = SubResource("Environment_612c4")
 
-[node name="Goal0" parent="Goals" unique_id=1585610551 instance=ExtResource("2_e4jwm")]
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1298314765]
+transform = Transform3D(0.9747612, -0.19334027, 0.111625046, 0, 0.49999997, 0.86602545, -0.2232501, -0.844168, 0.48738056, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GoalsNode" type="Node3D" parent="." unique_id=1763357328]
+
+[node name="Goal0" parent="GoalsNode" unique_id=1585610551 instance=ExtResource("2_e4jwm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.11776)
 
 [node name="Lane2" parent="." unique_id=1649162153 instance=ExtResource("3_612c4")]

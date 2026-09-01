@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://d26k2kxe4mwal"]
+
+[ext_resource type="Script" uid="uid://d3d2r0u0p7bod" path="res://Levels/Level.gd" id="1_286st"]
+[ext_resource type="PackedScene" uid="uid://c4v0peqkg130j" path="res://Goal/Goal.tscn" id="2_q1ycg"]
+[ext_resource type="PackedScene" uid="uid://bimiowbq37tmt" path="res://Duck/Duck.tscn" id="5_ht8ui"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g4bax"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_e4jwm"]
+sky_material = SubResource("ProceduralSkyMaterial_g4bax")
+
+[sub_resource type="Environment" id="Environment_612c4"]
+background_mode = 2
+sky = SubResource("Sky_e4jwm")
+
+[node name="Level" type="Node3D" unique_id=2045553894]
+script = ExtResource("1_286st")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1840473444]
+environment = SubResource("Environment_612c4")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1298314765]
+transform = Transform3D(0.9747612, -0.19334027, 0.111625046, 0, 0.49999997, 0.86602545, -0.2232501, -0.844168, 0.48738056, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GoalsNode" type="Node3D" parent="." unique_id=1763357328]
+
+[node name="Goal0" parent="GoalsNode" unique_id=1585610551 instance=ExtResource("2_q1ycg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.11776)
+
+[node name="Duck" parent="." unique_id=1158991918 instance=ExtResource("5_ht8ui")]
+
+[node name="Rig" type="Node3D" parent="Duck" unique_id=1010792245]
+transform = Transform3D(1, 2.3283064e-10, 0, 0, 0.5838813, -0.8118391, 0, 0.8118391, 0.5838813, -0.005545419, 0, 1.7686676)
+
+[node name="Camera3D" type="Camera3D" parent="Duck/Rig" unique_id=344968759]
+transform = Transform3D(-0.9999874, 0, 0.00501598, 0, 1, 0, -0.00501598, 0, -0.9999874, 0.014142856, -2.9802322e-08, -8.473373)
