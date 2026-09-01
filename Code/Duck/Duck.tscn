@@ -75,3 +75,23 @@ mesh = SubResource("CapsuleMesh_s2nsp")
 transform = Transform3D(-0.13726856, -0.017327875, -0.99038225, 0.9905219, 0.0025254297, -0.13733205, 0.004880801, -0.99984664, 0.016816983, 0.52065563, 0.06690207, 0.2339627)
 material_override = SubResource("StandardMaterial3D_lomqb")
 mesh = SubResource("CapsuleMesh_s2nsp")
+
+[node name="UI" type="PanelContainer" parent="." unique_id=2049376628]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -275.0
+offset_top = 71.0
+offset_right = -110.0
+offset_bottom = 164.0
+
+[node name="VBox" type="VBoxContainer" parent="UI" unique_id=272925355]
+layout_mode = 2
+
+[node name="Goals UI" type="Label" parent="UI/VBox" unique_id=639810232]
+layout_mode = 2
+text = "Goals remaining: 10"
+
+[node name="Label2" type="Label" parent="UI/VBox" unique_id=1009899454]
+layout_mode = 2
+text = "Lives: 3"

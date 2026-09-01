@@ -18,8 +18,10 @@ func _ready() -> void:
 func on_entered(other_area: Area3D) -> void:
 	if other_area is Vehicle:
 		print("lose a life")
+	
 	if other_area is Goal:
 		print("Goal!!!")
+		position = Vector3.ZERO
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
