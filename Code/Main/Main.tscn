@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://berl535au27hs" path="res://Lane/Lane.tscn" id="2_amygn"]
 [ext_resource type="PackedScene" uid="uid://d10bdq3u7df63" path="res://Vehicle/Vehicle.tscn" id="4_ps1la"]
 [ext_resource type="PackedScene" uid="uid://c4v0peqkg130j" path="res://Goal/Goal.tscn" id="5_6aewd"]
+[ext_resource type="PackedScene" uid="uid://dkrcw84mho1yp" path="res://PauseMenu/PauseMenu.tscn" id="6_u2i7p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_83ytx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,95 +27,6 @@ size = Vector2(50, 50)
 [sub_resource type="CylinderMesh" id="CylinderMesh_rckyl"]
 top_radius = 0.123535156
 bottom_radius = 0.123535156
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rawk2"]
-bg_color = Color(0.51907116, 0.60013676, 0.76974684, 1)
-expand_margin_left = 17.0
-expand_margin_top = 17.0
-expand_margin_right = 17.0
-expand_margin_bottom = 17.0
-
-[sub_resource type="FontFile" id="FontFile_pn5gh"]
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/17/0/ascent = 0.0
-cache/0/17/0/descent = 0.0
-cache/0/17/0/underline_position = 0.0
-cache/0/17/0/underline_thickness = 0.0
-cache/0/17/0/scale = 1.0
-cache/0/18/0/ascent = 0.0
-cache/0/18/0/descent = 0.0
-cache/0/18/0/underline_position = 0.0
-cache/0/18/0/underline_thickness = 0.0
-cache/0/18/0/scale = 1.0
-cache/0/19/0/ascent = 0.0
-cache/0/19/0/descent = 0.0
-cache/0/19/0/underline_position = 0.0
-cache/0/19/0/underline_thickness = 0.0
-cache/0/19/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-cache/0/21/0/ascent = 0.0
-cache/0/21/0/descent = 0.0
-cache/0/21/0/underline_position = 0.0
-cache/0/21/0/underline_thickness = 0.0
-cache/0/21/0/scale = 1.0
-cache/0/22/0/ascent = 0.0
-cache/0/22/0/descent = 0.0
-cache/0/22/0/underline_position = 0.0
-cache/0/22/0/underline_thickness = 0.0
-cache/0/22/0/scale = 1.0
-cache/0/23/0/ascent = 0.0
-cache/0/23/0/descent = 0.0
-cache/0/23/0/underline_position = 0.0
-cache/0/23/0/underline_thickness = 0.0
-cache/0/23/0/scale = 1.0
-cache/0/24/0/ascent = 0.0
-cache/0/24/0/descent = 0.0
-cache/0/24/0/underline_position = 0.0
-cache/0/24/0/underline_thickness = 0.0
-cache/0/24/0/scale = 1.0
-cache/0/25/0/ascent = 0.0
-cache/0/25/0/descent = 0.0
-cache/0/25/0/underline_position = 0.0
-cache/0/25/0/underline_thickness = 0.0
-cache/0/25/0/scale = 1.0
-cache/0/26/0/ascent = 0.0
-cache/0/26/0/descent = 0.0
-cache/0/26/0/underline_position = 0.0
-cache/0/26/0/underline_thickness = 0.0
-cache/0/26/0/scale = 1.0
-cache/0/27/0/ascent = 0.0
-cache/0/27/0/descent = 0.0
-cache/0/27/0/underline_position = 0.0
-cache/0/27/0/underline_thickness = 0.0
-cache/0/27/0/scale = 1.0
-cache/0/28/0/ascent = 0.0
-cache/0/28/0/descent = 0.0
-cache/0/28/0/underline_position = 0.0
-cache/0/28/0/underline_thickness = 0.0
-cache/0/28/0/scale = 1.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_qdf3d"]
-font = SubResource("FontFile_pn5gh")
-font_size = 28
-outline_size = 6
-outline_color = Color(0.35036418, 0.52572405, 0.8168905, 1)
 
 [node name="Main" type="Node" unique_id=1391425956]
 script = ExtResource("1_lxy7q")
@@ -164,33 +76,8 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0
 [node name="Goal" parent="." unique_id=1585610551 instance=ExtResource("5_6aewd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.11776)
 
-[node name="PauseMenu" type="PanelContainer" parent="." unique_id=1080402414]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = -48.0
-offset_right = 74.0
-offset_bottom = 67.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rawk2")
-
-[node name="VBox" type="VBoxContainer" parent="PauseMenu" unique_id=814782070]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PauseMenu/VBox" unique_id=1582436229]
-layout_mode = 2
-theme_override_font_sizes/font_size = 1
-text = "Danger Dodger"
-label_settings = SubResource("LabelSettings_qdf3d")
-
-[node name="PlayButton" type="Button" parent="PauseMenu/VBox" unique_id=699305301]
-layout_mode = 2
-text = "Play"
-
-[node name="QuitButton" type="Button" parent="PauseMenu/VBox" unique_id=860983550]
-layout_mode = 2
-text = "Quit"
+[node name="PauseMenu" parent="." unique_id=709300660 instance=ExtResource("6_u2i7p")]
+offset_left = -96.0
+offset_top = -59.0
+offset_right = 96.0
+offset_bottom = 56.0

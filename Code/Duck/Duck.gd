@@ -1,8 +1,13 @@
 extends Area3D
 class_name Duck
 
+@onready var collider: CollisionShape3D = $Collider
 @onready var graphics: Node3D = $Graphics
+@onready var lives_ui: Label = $UI/VBox/LivesUI
 
+@export var lives: int = 3
+
+var spawning_point: Vector3
 var leap_distance: float = 1.0
 var weight: float = 1.0
 var weight_speed: float = 5.0
@@ -12,16 +17,13 @@ var next_spot: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
 	area_entered.connect(on_entered)
+	
+	spawning_point = position
 	current_spot = position
 	next_spot = position
-
-func on_entered(other_area: Area3D) -> void:
-	if other_area is Vehicle:
-		print("lose a life")
 	
-	if other_area is Goal:
-		print("Goal!!!")
-		position = Vector3.ZERO
+	update_lives(0)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -61,3 +63,29 @@ func _process(delta: float) -> void:
 			
 	
 	position = lerp(current_spot, next_spot, weight)
+	if current_spot == spawning_point:
+		graphics.show()
+		collider.disabled = false
+
+func update_lives(delta_lives: int):
+	lives += delta_lives
+	lives_ui.text = "Lives: " + str(lives)
+	pass
+
+func respawn():
+	graphics.hide()
+	collider.set_deferred("disabled", true)
+	
+	next_spot = spawning_point
+	weight = 0.0
+	pass
+
+func on_entered(other_area: Area3D) -> void:
+	if other_area is Vehicle:
+		update_lives(-1)
+		respawn()
+		print(lives)
+	
+	if other_area is Goal:
+		print("Goal!!!")
+		respawn()
