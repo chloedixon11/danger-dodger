@@ -118,6 +118,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 1
 text = "Danger Dodger"
 label_settings = SubResource("LabelSettings_qdf3d")
+horizontal_alignment = 1
 
 [node name="PlayButton" type="Button" parent="VBox" unique_id=1603249059]
 layout_mode = 2

@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://d26k2kxe4mwal"]
 
-[ext_resource type="Script" uid="uid://d3d2r0u0p7bod" path="res://Levels/Level.gd" id="1_286st"]
-[ext_resource type="PackedScene" uid="uid://c4v0peqkg130j" path="res://Goal/Goal.tscn" id="2_q1ycg"]
-[ext_resource type="PackedScene" uid="uid://bimiowbq37tmt" path="res://Duck/Duck.tscn" id="5_ht8ui"]
+[ext_resource type="Script" uid="uid://d3d2r0u0p7bod" path="res://Level/Level.gd" id="1_r3cbp"]
+[ext_resource type="PackedScene" uid="uid://c4v0peqkg130j" path="res://Goal/Goal.tscn" id="2_cyxyq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g4bax"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,8 +14,12 @@ sky_material = SubResource("ProceduralSkyMaterial_g4bax")
 background_mode = 2
 sky = SubResource("Sky_e4jwm")
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_i5eh5"]
+bottom_radius = 0.0
+height = 0.8790283
+
 [node name="Level" type="Node3D" unique_id=2045553894]
-script = ExtResource("1_286st")
+script = ExtResource("1_r3cbp")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1840473444]
 environment = SubResource("Environment_612c4")
@@ -27,13 +30,13 @@ shadow_enabled = true
 
 [node name="GoalsNode" type="Node3D" parent="." unique_id=1763357328]
 
-[node name="Goal0" parent="GoalsNode" unique_id=1585610551 instance=ExtResource("2_q1ycg")]
+[node name="Goal0" parent="GoalsNode" unique_id=1585610551 instance=ExtResource("2_cyxyq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.11776)
 
-[node name="Duck" parent="." unique_id=1158991918 instance=ExtResource("5_ht8ui")]
+[node name="SpawningPoint" type="Node3D" parent="." unique_id=774255441]
+transform = Transform3D(-0.9999951, 0, -0.00313535, 0, 1, 0, 0.00313535, 0, -0.9999951, 0, 0, 0)
+visible = false
 
-[node name="Rig" type="Node3D" parent="Duck" unique_id=1010792245]
-transform = Transform3D(1, 2.3283064e-10, 0, 0, 0.5838813, -0.8118391, 0, 0.8118391, 0.5838813, -0.005545419, 0, 1.7686676)
-
-[node name="Camera3D" type="Camera3D" parent="Duck/Rig" unique_id=344968759]
-transform = Transform3D(-0.9999874, 0, 0.00501598, 0, 1, 0, -0.00501598, 0, -0.9999874, 0.014142856, -2.9802322e-08, -8.473373)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpawningPoint" unique_id=1484604166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0147095, 0)
+mesh = SubResource("CylinderMesh_i5eh5")

@@ -2,6 +2,7 @@ extends Node3D
 class_name  Level
 
 @onready var goals_node: Node3D = $GoalsNode
+@onready var spawning_point: Node3D = $SpawningPoint
 
 var main: Main
 var goals: Array

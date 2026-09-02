@@ -95,3 +95,10 @@ text = "Goals remaining: 11"
 [node name="LivesUI" type="Label" parent="UI/VBox" unique_id=1009899454]
 layout_mode = 2
 text = "Lives: 3"
+
+[node name="Rig" type="Node3D" parent="." unique_id=684722520]
+transform = Transform3D(0.99168617, 0.006858788, 0.12849958, 0.0004756106, 0.9983768, -0.056959786, -0.12868175, 0.05654731, 0.9900735, -0.009511063, 0, 3.0334785)
+
+[node name="Camera3D" type="Camera3D" parent="Rig" unique_id=118999946]
+transform = Transform3D(-0.9984339, 0.0060949326, 0.055607438, 0.038303103, 0.7989599, 0.60016286, -0.04077038, 0.60135263, -0.7979417, 0.6969931, 9.480153, -11.379819)
+fov = 50.625

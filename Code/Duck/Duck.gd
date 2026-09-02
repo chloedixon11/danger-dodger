@@ -27,9 +27,9 @@ func _ready() -> void:
 	current_spot = position
 	next_spot = position
 	
-	level = get_parent()
+	#level = get_parent()
 	update_lives(0)
-	level.goals_remaining()
+	#level.goals_remaining()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

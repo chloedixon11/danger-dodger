@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://dtlww5xddq2xa"]
+
+[ext_resource type="Script" uid="uid://d3d2r0u0p7bod" path="res://Level/Level.gd" id="1_fw50w"]
+[ext_resource type="PackedScene" uid="uid://c4v0peqkg130j" path="res://Goal/Goal.tscn" id="2_fbwjr"]
+[ext_resource type="PackedScene" uid="uid://berl535au27hs" path="res://Lane/Road/Road.tscn" id="3_6br2f"]
+[ext_resource type="PackedScene" uid="uid://d10bdq3u7df63" path="res://Vehicle/Vehicle.tscn" id="4_h8y7k"]
+[ext_resource type="PackedScene" uid="uid://cwqeu7k1fculu" path="res://Lane/Waterway/Waterway.tscn" id="5_vij0w"]
+[ext_resource type="PackedScene" uid="uid://cvgoojbjmr2qo" path="res://Vessel/Vessel.tscn" id="6_8bgo4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_usc3h"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_5dqy1"]
+sky_material = SubResource("ProceduralSkyMaterial_usc3h")
+
+[sub_resource type="Environment" id="Environment_fj61p"]
+background_mode = 2
+sky = SubResource("Sky_5dqy1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_beq8a"]
+albedo_color = Color(0.2666077, 0.5339965, 0.39391467, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qabvo"]
+size = Vector2(50, 50)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hxt8e"]
+top_radius = 0.123535156
+bottom_radius = 0.123535156
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s2nsp"]
+bottom_radius = 0.0
+height = 0.8790283
+
+[node name="SplashScreen" type="Node3D" unique_id=289174624]
+script = ExtResource("1_fw50w")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=561130215]
+environment = SubResource("Environment_fj61p")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=275216525]
+transform = Transform3D(0.9747612, -0.19334027, 0.111625046, 0, 0.49999997, 0.86602545, -0.2232501, -0.844168, 0.48738056, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GoalsNode" type="Node3D" parent="." unique_id=1109272453]
+
+[node name="Goal0" parent="GoalsNode" unique_id=1585610551 instance=ExtResource("2_fbwjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.11776)
+
+[node name="Goal1" parent="GoalsNode" unique_id=1298276653 instance=ExtResource("2_fbwjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -16.11776)
+
+[node name="Goal2" parent="GoalsNode" unique_id=935295361 instance=ExtResource("2_fbwjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -16.11776)
+
+[node name="Lane2" parent="." unique_id=1649162153 instance=ExtResource("3_6br2f")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, -3.2096472)
+
+[node name="Vehicle" parent="Lane2" unique_id=1002617338 instance=ExtResource("4_h8y7k")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Lane" parent="." unique_id=446657771 instance=ExtResource("3_6br2f")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -2.2096472)
+
+[node name="Vehicle" parent="Lane" unique_id=730832895 instance=ExtResource("4_h8y7k")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.3841858e-07, 0, 3)
+
+[node name="Lane3" parent="." unique_id=1591999769 instance=ExtResource("3_6br2f")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -7.7827415)
+
+[node name="Vehicle" parent="Lane3" unique_id=1475414060 instance=ExtResource("4_h8y7k")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -3)
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=729631120]
+material_override = SubResource("StandardMaterial3D_beq8a")
+mesh = SubResource("PlaneMesh_qabvo")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=833497383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.092991)
+mesh = SubResource("CylinderMesh_hxt8e")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Ground" unique_id=1611386186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.272135)
+mesh = SubResource("CylinderMesh_hxt8e")
+skeleton = NodePath("../..")
+
+[node name="Waterway" parent="." unique_id=1862011274 instance=ExtResource("5_vij0w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -5)
+
+[node name="Vessel" parent="Waterway" unique_id=2030516887 instance=ExtResource("6_8bgo4")]
+
+[node name="Waterway2" parent="." unique_id=1654594169 instance=ExtResource("5_vij0w")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, -7)
+
+[node name="Vessel" parent="Waterway2" unique_id=1893541102 instance=ExtResource("6_8bgo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 0, 4)
+
+[node name="SpawningPoint" type="Node3D" parent="." unique_id=936785538]
+transform = Transform3D(-0.9999951, 0, -0.00313535, 0, 1, 0, 0.00313535, 0, -0.9999951, 0, 0, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpawningPoint" unique_id=46885843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0147095, 0)
+mesh = SubResource("CylinderMesh_s2nsp")
