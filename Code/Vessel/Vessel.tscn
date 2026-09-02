@@ -1,65 +1,23 @@
 [gd_scene format=3 uid="uid://cvgoojbjmr2qo"]
 
 [ext_resource type="Script" uid="uid://cu1c8g45b7fqm" path="res://Vessel/Vessel.gd" id="1_fywir"]
+[ext_resource type="PackedScene" uid="uid://ce3f6qpkf4ig" path="res://Art/Art.tscn" id="2_blvak"]
 
-[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_s2nsp"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n85f5"]
-albedo_color = Color(0.17612255, 0.43648446, 0.2812329, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fywir"]
-albedo_color = Color(0.25935832, 0.6614842, 0.33838058, 1)
-
-[sub_resource type="PrismMesh" id="PrismMesh_rawk2"]
-size = Vector3(0.6, 0.6, 0.3)
+[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_lm42s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rckyl"]
-size = Vector3(3.8, 0.36084765, 1)
+size = Vector3(3.8, 0.36084765, 0.66986084)
 
-[node name="Node3D" type="Area3D" unique_id=2030516887]
+[node name="Vessel" type="Area3D" unique_id=2030516887]
 script = ExtResource("1_fywir")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=405596471]
-mesh = SubResource("PlaceholderMesh_s2nsp")
+transform = Transform3D(-0.00029186805, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -0.00029186805, -0.0037611164, -0.06613815, 0.5)
+mesh = SubResource("PlaceholderMesh_lm42s")
 
-[node name="LilyPads" type="CSGCombiner3D" parent="MeshInstance3D" unique_id=688480893]
-transform = Transform3D(1, 0, -6.519258e-09, 1.4901161e-08, 1, 0, -6.519258e-09, 0, 1, 0, 0.016914979, 7.450581e-09)
-material_override = SubResource("StandardMaterial3D_n85f5")
-use_collision = true
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="MeshInstance3D/LilyPads" unique_id=1577211110]
-transform = Transform3D(1, 0, 0, 6.3331016e-25, 1, 0, 0, 0, 1, -0.040706396, 0.01380913, -0.014947053)
-material_override = SubResource("StandardMaterial3D_fywir")
-radius = 0.5961914
-height = 0.13879395
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="MeshInstance3D/LilyPads" unique_id=1675377848]
-transform = Transform3D(-0.15652674, -0.98610616, -0.05562525, -0.0506365, -0.048233286, 0.99755174, -0.9863748, 0.1589602, -0.042383168, 0.32636786, -0.007553299, -0.05780274)
-operation = 2
-mesh = SubResource("PrismMesh_rawk2")
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="MeshInstance3D/LilyPads" unique_id=1372524853]
-transform = Transform3D(1, 0, 0, 6.3331016e-25, 1, 0, 0, 0, 1, 1.2168932, 0.013809111, -0.014947045)
-material_override = SubResource("StandardMaterial3D_fywir")
-radius = 0.5961914
-height = 0.13879395
-
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="MeshInstance3D/LilyPads" unique_id=1082613134]
-transform = Transform3D(-0.15652674, -0.98610616, -0.05562525, -0.0506365, -0.048233286, 0.99755174, -0.9863748, 0.1589602, -0.042383168, 1.5839674, -0.0075533176, -0.057802733)
-operation = 2
-mesh = SubResource("PrismMesh_rawk2")
-
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="MeshInstance3D/LilyPads" unique_id=378495702]
-transform = Transform3D(1, 0, 0, 6.3331016e-25, 1, 0, 0, 0, 1, -1.3056309, 0.013809148, -0.014947061)
-material_override = SubResource("StandardMaterial3D_fywir")
-radius = 0.5961914
-height = 0.13879395
-
-[node name="CSGMesh3D3" type="CSGMesh3D" parent="MeshInstance3D/LilyPads" unique_id=2020773181]
-transform = Transform3D(-0.15652674, -0.98610616, -0.05562525, -0.0506365, -0.048233286, 0.99755174, -0.9863748, 0.1589602, -0.042383168, -0.9385567, -0.0075532803, -0.05780275)
-operation = 2
-mesh = SubResource("PrismMesh_rawk2")
+[node name="Art" parent="MeshInstance3D" unique_id=927862619 instance=ExtResource("2_blvak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34573972, 0.15900218, -0.0001009102)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1750401194]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05419922, -0.007541746, 0)
+transform = Transform3D(-0.00029186805, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -0.00029186805, -0.08545107, 0.072224885, 0.5)
 shape = SubResource("BoxShape3D_rckyl")

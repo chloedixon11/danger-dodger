@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ce3f6qpkf4ig"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wcd5"]
+albedo_color = Color(0.17612255, 0.43648446, 0.2812329, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pyloi"]
+albedo_color = Color(0.25935832, 0.6614842, 0.33838058, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_3k6re"]
+size = Vector3(0.6, 0.6, 0.3)
+
+[node name="Art" type="Node3D" unique_id=927862619]
+
+[node name="LilyPads" type="CSGCombiner3D" parent="." unique_id=1538868695]
+transform = Transform3D(1, 0, -6.519258e-09, 1.4901161e-08, 1, 0, -6.519258e-09, 0, 1, 0, 0.016914979, 7.450581e-09)
+material_override = SubResource("StandardMaterial3D_8wcd5")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LilyPads" unique_id=1527338214]
+transform = Transform3D(1, 0, 0, 6.3331016e-25, 1, 0, 0, 0, 1, -0.040706396, 0.01380913, -0.014947053)
+material_override = SubResource("StandardMaterial3D_pyloi")
+radius = 0.5961914
+height = 0.13879395
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="LilyPads" unique_id=1934905894]
+transform = Transform3D(-0.15652674, -0.98610616, -0.05562525, -0.0506365, -0.048233286, 0.99755174, -0.9863748, 0.1589602, -0.042383168, 0.32636786, -0.007553299, -0.05780274)
+operation = 2
+mesh = SubResource("PrismMesh_3k6re")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="LilyPads" unique_id=1244924839]
+transform = Transform3D(1, 0, 0, 6.3331016e-25, 1, 0, 0, 0, 1, 1.2168932, 0.013809111, -0.014947045)
+material_override = SubResource("StandardMaterial3D_pyloi")
+radius = 0.5961914
+height = 0.13879395
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="LilyPads" unique_id=23129553]
+transform = Transform3D(-0.15652674, -0.98610616, -0.05562525, -0.0506365, -0.048233286, 0.99755174, -0.9863748, 0.1589602, -0.042383168, 1.5839674, -0.0075533176, -0.057802733)
+operation = 2
+mesh = SubResource("PrismMesh_3k6re")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="LilyPads" unique_id=1470053240]
+transform = Transform3D(1, 0, 0, 6.3331016e-25, 1, 0, 0, 0, 1, -1.3056309, 0.013809148, -0.014947061)
+material_override = SubResource("StandardMaterial3D_pyloi")
+radius = 0.5961914
+height = 0.13879395
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="LilyPads" unique_id=2038428075]
+transform = Transform3D(-0.15652674, -0.98610616, -0.05562525, -0.0506365, -0.048233286, 0.99755174, -0.9863748, 0.1589602, -0.042383168, -0.9385567, -0.0075532803, -0.05780275)
+operation = 2
+mesh = SubResource("PrismMesh_3k6re")

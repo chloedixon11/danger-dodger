@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d10bdq3u7df63" path="res://Vehicle/Vehicle.tscn" id="3_tgin1"]
 [ext_resource type="PackedScene" uid="uid://bimiowbq37tmt" path="res://Duck/Duck.tscn" id="4_de4at"]
 [ext_resource type="PackedScene" uid="uid://cwqeu7k1fculu" path="res://Lane/Waterway/Waterway.tscn" id="5_ye6de"]
+[ext_resource type="PackedScene" uid="uid://cvgoojbjmr2qo" path="res://Vessel/Vessel.tscn" id="6_8b8hp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ye6de"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -69,6 +70,8 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0
 
 [node name="Waterway" parent="." unique_id=1862011274 instance=ExtResource("5_ye6de")]
 transform = Transform3D(-0.0059069498, 0, -0.99998266, 0, 1, 0, 0.99998266, 0, -0.0059069498, 0, 0, -8)
+
+[node name="Vessel" parent="Waterway" unique_id=2030516887 instance=ExtResource("6_8b8hp")]
 
 [node name="Ground" type="MeshInstance3D" parent="." unique_id=1449691348]
 material_override = SubResource("StandardMaterial3D_ye6de")

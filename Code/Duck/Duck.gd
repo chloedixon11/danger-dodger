@@ -47,15 +47,25 @@ func _process(delta: float) -> void:
 			
 		if Input.is_action_just_pressed("move_up"):
 			#position.z -= leap_distance
-			next_spot = current_spot + Vector3.FORWARD
 			weight = 0
 			graphics.rotation_degrees.y = 0
+			if riding:
+				current_spot = riding.global_position
+				next_spot = (current_spot + Vector3.FORWARD).round()
+			else:
+				next_spot = current_spot + Vector3.FORWARD
+			riding = null
 		
 		if Input.is_action_just_pressed("move_down"):
 			#position.z += leap_distance
-			next_spot = current_spot + Vector3.BACK
 			weight = 0
 			graphics.rotation_degrees.y = 180
+			if riding:
+				current_spot = riding.global_position
+				next_spot = (current_spot + Vector3.BACK).round()
+			else:
+				next_spot = current_spot + Vector3.BACK
+			riding = null
 			
 	if weight < 1.0:
 		weight += weight_speed * delta
@@ -74,8 +84,8 @@ func _process(delta: float) -> void:
 	else:
 		position = lerp(current_spot, next_spot, weight)
 		
-	if riding != null:
-		position += riding.position
+	if riding:
+		position = riding.global_position
 	
 
 func update_lives(delta_lives: int):

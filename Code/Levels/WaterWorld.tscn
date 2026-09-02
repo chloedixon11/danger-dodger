@@ -74,7 +74,7 @@ mesh = SubResource("PlaneMesh_qabvo")
 metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=833497383]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.092991)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.092991)
 mesh = SubResource("CylinderMesh_hxt8e")
 skeleton = NodePath("../..")
 
@@ -92,7 +92,11 @@ transform = Transform3D(1, 2.3283064e-10, 0, 0, 0.5838813, -0.8118391, 0, 0.8118
 transform = Transform3D(-0.9999874, 0, 0.00501598, 0, 1, 0, -0.00501598, 0, -0.9999874, 0.014142856, -2.9802322e-08, -8.473373)
 
 [node name="Waterway" parent="." unique_id=1862011274 instance=ExtResource("6_3qy7e")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -5)
 
-[node name="Vessel" parent="Waterway" unique_id=944421107 instance=ExtResource("7_usc3h")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+[node name="Vessel" parent="Waterway" unique_id=2030516887 instance=ExtResource("7_usc3h")]
+
+[node name="Waterway2" parent="." unique_id=1654594169 instance=ExtResource("6_3qy7e")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, -6)
+
+[node name="Vessel" parent="Waterway2" unique_id=1893541102 instance=ExtResource("7_usc3h")]
