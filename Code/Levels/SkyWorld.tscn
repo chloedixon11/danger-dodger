@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3d2r0u0p7bod" path="res://Levels/Level.gd" id="1_g4bax"]
 [ext_resource type="PackedScene" uid="uid://c4v0peqkg130j" path="res://Goal/Goal.tscn" id="2_e4jwm"]
-[ext_resource type="PackedScene" uid="uid://berl535au27hs" path="res://Lane/Lane.tscn" id="3_612c4"]
+[ext_resource type="PackedScene" uid="uid://berl535au27hs" path="res://Lane/Road/Road.tscn" id="3_612c4"]
 [ext_resource type="PackedScene" uid="uid://d10bdq3u7df63" path="res://Vehicle/Vehicle.tscn" id="4_s5kmm"]
 [ext_resource type="PackedScene" uid="uid://bimiowbq37tmt" path="res://Duck/Duck.tscn" id="5_u6y4n"]
 

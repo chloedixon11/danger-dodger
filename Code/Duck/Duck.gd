@@ -9,6 +9,8 @@ class_name Duck
 
 var level: Level
 
+#var is_riding: bool = false
+var riding: Vessel = null
 var leap_distance: float = 1.0
 var weight: float = 1.0
 var weight_speed: float = 5.0
@@ -71,6 +73,9 @@ func _process(delta: float) -> void:
 		collider.disabled = false
 	else:
 		position = lerp(current_spot, next_spot, weight)
+		
+	if riding != null:
+		position += riding.position
 	
 
 func update_lives(delta_lives: int):
@@ -99,7 +104,12 @@ func on_entered(other_area: Area3D) -> void:
 		print(lives)
 	
 	if other_area is Waterway:
-		update_lives(-1)
-		respawn()
-		print("Drowned!")
+		if riding == null:
+			update_lives(-1)
+			respawn()
+			print("Drowned!")
 		
+	if other_area is Vessel:
+		print("Taking a ride")
+		if riding == null:
+			riding = other_area

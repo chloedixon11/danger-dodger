@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://d3d2r0u0p7bod" path="res://Levels/Level.gd" id="1_5yycp"]
 [ext_resource type="PackedScene" uid="uid://c4v0peqkg130j" path="res://Goal/Goal.tscn" id="1_rwfof"]
-[ext_resource type="PackedScene" uid="uid://berl535au27hs" path="res://Lane/Lane.tscn" id="2_5yycp"]
+[ext_resource type="PackedScene" uid="uid://berl535au27hs" path="res://Lane/Road/Road.tscn" id="2_5yycp"]
 [ext_resource type="PackedScene" uid="uid://d10bdq3u7df63" path="res://Vehicle/Vehicle.tscn" id="3_7touw"]
 [ext_resource type="PackedScene" uid="uid://bimiowbq37tmt" path="res://Duck/Duck.tscn" id="4_3qy7e"]
+[ext_resource type="PackedScene" uid="uid://cwqeu7k1fculu" path="res://Lane/Waterway/Waterway.tscn" id="6_3qy7e"]
+[ext_resource type="PackedScene" uid="uid://cvgoojbjmr2qo" path="res://Vessel/Vessel.tscn" id="7_usc3h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_usc3h"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -88,3 +90,9 @@ transform = Transform3D(1, 2.3283064e-10, 0, 0, 0.5838813, -0.8118391, 0, 0.8118
 
 [node name="Camera3D" type="Camera3D" parent="Duck/Rig" unique_id=1730913351]
 transform = Transform3D(-0.9999874, 0, 0.00501598, 0, 1, 0, -0.00501598, 0, -0.9999874, 0.014142856, -2.9802322e-08, -8.473373)
+
+[node name="Waterway" parent="." unique_id=1862011274 instance=ExtResource("6_3qy7e")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+
+[node name="Vessel" parent="Waterway" unique_id=944421107 instance=ExtResource("7_usc3h")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)

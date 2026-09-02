@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://c4v0peqkg130j" path="res://Goal/Goal.tscn" id="1_48gxu"]
 [ext_resource type="Script" uid="uid://d3d2r0u0p7bod" path="res://Levels/Level.gd" id="1_tgin1"]
-[ext_resource type="PackedScene" uid="uid://berl535au27hs" path="res://Lane/Lane.tscn" id="2_de4at"]
+[ext_resource type="PackedScene" uid="uid://berl535au27hs" path="res://Lane/Road/Road.tscn" id="2_de4at"]
 [ext_resource type="PackedScene" uid="uid://d10bdq3u7df63" path="res://Vehicle/Vehicle.tscn" id="3_tgin1"]
 [ext_resource type="PackedScene" uid="uid://bimiowbq37tmt" path="res://Duck/Duck.tscn" id="4_de4at"]
-[ext_resource type="PackedScene" uid="uid://cwqeu7k1fculu" path="res://Waterway/Waterway.tscn" id="5_ye6de"]
+[ext_resource type="PackedScene" uid="uid://cwqeu7k1fculu" path="res://Lane/Waterway/Waterway.tscn" id="5_ye6de"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ye6de"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
