@@ -123,6 +123,10 @@ label_settings = SubResource("LabelSettings_qdf3d")
 layout_mode = 2
 text = "Play"
 
+[node name="ContinueButton" type="Button" parent="VBox" unique_id=458310083]
+layout_mode = 2
+text = "Continue"
+
 [node name="QuitButton" type="Button" parent="VBox" unique_id=1350646444]
 layout_mode = 2
 text = "Quit"

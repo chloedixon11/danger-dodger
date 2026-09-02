@@ -90,7 +90,11 @@ func _process(delta: float) -> void:
 
 func update_lives(delta_lives: int):
 	lives += delta_lives
+	if lives < 1:
+		level.main.pause_menu.game_over("Game Over")
+		
 	lives_ui.text = "Lives: " + str(lives)
+	
 	pass
 
 func respawn():

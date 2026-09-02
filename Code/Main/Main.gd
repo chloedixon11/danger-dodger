@@ -7,15 +7,18 @@ const SKY_WORLD = preload("res://Levels/SkyWorld.tscn")
 
 @onready var pause_menu: PauseMenu = $PauseMenu
 
-var levels: Array[PackedScene] = [WATER_WORLD, TRAFFIC_TIME, SKY_WORLD]
+var levels: Array[PackedScene] = [TRAFFIC_TIME, WATER_WORLD, SKY_WORLD]
 var current_level = -1
 var level: Level = null
 
 func _ready() -> void:
+	restart()
+	#next_level()
+
+func restart():
+	current_level = -1
 	next_level()
-	#level = TRAFFIC_TIME.instantiate()
-	#level.main = self
-	#add_child(level)
+	
 
 func next_level():
 	if level:
