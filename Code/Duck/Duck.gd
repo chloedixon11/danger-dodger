@@ -8,6 +8,7 @@ class_name Duck
 
 @export var lives: int = 3
 
+var main: Main
 var level: Level
 
 #var is_riding: bool = false
@@ -34,7 +35,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if weight >= 1.0:
+	if weight == 1.0:
 		if Input.is_action_just_pressed("move_left"):
 			#position.x -= leap_distance
 			next_spot = current_spot + Vector3.LEFT
@@ -103,13 +104,15 @@ func respawn():
 	graphics.hide()
 	collider.set_deferred("disabled", true)
 	
-	next_spot = spawning_point
+	next_spot = level.spawning_point.position
 	weight = 0.0
 	
 
 func update_goals():
 	var remainder = level.check_level_over()
 	goals_ui.text = "Goals Remaining: " + str(remainder)
+	if remainder <= 0:
+		main.next_level()
 	
 
 func on_entered(other_area: Area3D) -> void:

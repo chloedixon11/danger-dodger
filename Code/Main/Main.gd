@@ -11,13 +11,10 @@ const WATER_WORLD = preload("res://Level/WaterWorld/WaterWorld.tscn")
 @onready var pause_menu: PauseMenu = $PauseMenu
 
 var duck: Duck
+
 var levels: Array[PackedScene] = [SKY_WORLD, TRAFFIC_TIME, WATER_WORLD]
 var current_level = -1
 var level: Level = null
-
-
-
-
 
 
 
@@ -26,6 +23,7 @@ func restart():
 	if duck:
 		duck.queue_free()
 	duck = DUCK.instantiate()
+	duck.main = self
 	
 	add_child(duck)
 	
@@ -44,4 +42,5 @@ func next_level():
 	add_child(level)
 	duck.level = level
 	duck.spawning_point = level.spawning_point.position
-	#duck.position = level.spawning_point.position
+	duck.respawn()
+	duck.update_goals()
