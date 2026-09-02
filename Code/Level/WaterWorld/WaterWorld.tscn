@@ -24,10 +24,6 @@ albedo_color = Color(0.2666077, 0.5339965, 0.39391467, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_qabvo"]
 size = Vector2(50, 50)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_hxt8e"]
-top_radius = 0.123535156
-bottom_radius = 0.123535156
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_s2nsp"]
 bottom_radius = 0.0
 height = 0.8790283
@@ -57,13 +53,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -16.11776)
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, -3.2096472)
 
 [node name="Vehicle" parent="Lane2" unique_id=1002617338 instance=ExtResource("4_kujx4")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.3841858e-07, 0, -1.9247103)
 
 [node name="Lane" parent="." unique_id=446657771 instance=ExtResource("3_3icd7")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -2.2096472)
 
 [node name="Vehicle" parent="Lane" unique_id=730832895 instance=ExtResource("4_kujx4")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.3841858e-07, 0, -5.603185)
 
 [node name="Lane3" parent="." unique_id=1591999769 instance=ExtResource("3_3icd7")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -7.7827415)
@@ -76,25 +72,47 @@ material_override = SubResource("StandardMaterial3D_beq8a")
 mesh = SubResource("PlaneMesh_qabvo")
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=833497383]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.092991)
-mesh = SubResource("CylinderMesh_hxt8e")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Ground" unique_id=1611386186]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.272135)
-mesh = SubResource("CylinderMesh_hxt8e")
-skeleton = NodePath("../..")
-
 [node name="Waterway" parent="." unique_id=1862011274 instance=ExtResource("5_r3q66")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -5)
+speed_limit = 3.0
 
 [node name="Vessel" parent="Waterway" unique_id=2030516887 instance=ExtResource("6_qxpf5")]
 
+[node name="Waterway4" parent="." unique_id=660398230 instance=ExtResource("5_r3q66")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -11.382273)
+speed_limit = 7.0
+
+[node name="Vessel" parent="Waterway4" unique_id=489913135 instance=ExtResource("6_qxpf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+speed = 6.0
+
+[node name="Waterway3" parent="." unique_id=2100062556 instance=ExtResource("5_r3q66")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -10.219743)
+speed_limit = 3.0
+
+[node name="Vessel" parent="Waterway3" unique_id=1935307747 instance=ExtResource("6_qxpf5")]
+
+[node name="Waterway6" parent="." unique_id=1634627833 instance=ExtResource("5_r3q66")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -14.34455)
+speed_limit = 4.0
+
+[node name="Vessel" parent="Waterway6" unique_id=598243908 instance=ExtResource("6_qxpf5")]
+
 [node name="Waterway2" parent="." unique_id=1654594169 instance=ExtResource("5_r3q66")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, -6)
+speed_limit = 5.0
 
 [node name="Vessel" parent="Waterway2" unique_id=1893541102 instance=ExtResource("6_qxpf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 0, 3.9483228)
+speed = 5.0
+
+[node name="Waterway5" parent="." unique_id=1484213228 instance=ExtResource("5_r3q66")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, -12.319387)
+speed_limit = 5.0
+
+[node name="Vessel" parent="Waterway5" unique_id=1044373662 instance=ExtResource("6_qxpf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, 0, -4.051677)
+speed = 5.0
 
 [node name="SpawningPoint" type="Node3D" parent="." unique_id=936785538]
 transform = Transform3D(-0.9999951, 0, -0.00313535, 0, 1, 0, 0.00313535, 0, -0.9999951, 0, 0, 0)

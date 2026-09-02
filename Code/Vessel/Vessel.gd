@@ -1,7 +1,7 @@
 extends Area3D
 class_name Vessel
 
-var speed: float = 3.0
+@export var speed: float = 3.0
 
 var kill_distance: float = 10.0
 
