@@ -4,6 +4,7 @@ class_name Duck
 @onready var collider: CollisionShape3D = $Collider
 @onready var graphics: Node3D = $Graphics
 @onready var lives_ui: Label = $UI/VBox/LivesUI
+@onready var goals_ui: Label = $UI/VBox/GoalsUI
 
 @export var lives: int = 3
 
@@ -28,6 +29,7 @@ func _ready() -> void:
 	
 	level = get_parent()
 	update_lives(0)
+	level.goals_remaining()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -105,12 +107,17 @@ func respawn():
 	weight = 0.0
 	
 
+func update_goals():
+	var remainder = level.check_level_over()
+	goals_ui.text = "Goals Remaining: " + str(remainder)
+	
+
 func on_entered(other_area: Area3D) -> void:
 	if other_area is Goal:
 		respawn()
 		print("Goal!!!")
 		other_area.set_occupied()
-		level.check_level_over()
+		update_goals()
 
 	if other_area is Vehicle:
 		update_lives(-1)

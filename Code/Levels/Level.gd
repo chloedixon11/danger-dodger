@@ -9,11 +9,19 @@ var goals: Array
 func _ready() -> void:
 	goals = goals_node.get_children()
 
-func check_level_over():
+func goals_remaining() -> int:
+	var occupied_count = 0
+	for goal: Goal in goals:
+		if goal.occupied:
+			occupied_count += 1
+	return goals.size() - occupied_count
+
+func check_level_over() -> int:
 	for goal in goals:
 		if not goal.occupied:
 			print("Game not over")
-			return
+			return goals_remaining()
 	print("Game Over")
 	main.next_level()
+	return 0
 	#pause_menu.game_over("You Win!")
