@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://c4v0peqkg130j" path="res://Goal/Goal.tscn" id="2_e4jwm"]
 [ext_resource type="PackedScene" uid="uid://berl535au27hs" path="res://Lane/Road/Road.tscn" id="3_612c4"]
 [ext_resource type="PackedScene" uid="uid://d10bdq3u7df63" path="res://Vehicle/Vehicle.tscn" id="4_s5kmm"]
+[ext_resource type="PackedScene" uid="uid://cwqeu7k1fculu" path="res://Lane/Waterway/Waterway.tscn" id="5_fvs1v"]
+[ext_resource type="PackedScene" uid="uid://cvgoojbjmr2qo" path="res://Vessel/Vessel.tscn" id="6_udm81"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g4bax"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -33,7 +35,7 @@ script = ExtResource("1_g4bax")
 environment = SubResource("Environment_612c4")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1298314765]
-transform = Transform3D(0.9747612, -0.19334029, 0.111625046, 0, 0.49999997, 0.86602545, -0.2232501, -0.844168, 0.48738056, 0, 0, 15)
+transform = Transform3D(0.9747612, -0.19334029, 0.111625046, 0, 0.49999997, 0.86602545, -0.2232501, -0.844168, 0.48738056, 0, 0, 13)
 shadow_enabled = true
 
 [node name="GoalsNode" type="Node3D" parent="." unique_id=1763357328]
@@ -43,12 +45,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.11776)
 
 [node name="Lane2" parent="." unique_id=1649162153 instance=ExtResource("3_612c4")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, -3.2096472)
-speed_limit = 3.0
+speed_limit = 4.0
 
 [node name="Vehicle" parent="Lane2" unique_id=1002617338 instance=ExtResource("4_s5kmm")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.1525574e-07, 0, -6)
 
-[node name="Lane3" parent="." unique_id=908754949 instance=ExtResource("3_612c4")]
+[node name="Lane12" parent="." unique_id=908754949 instance=ExtResource("3_612c4")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, -11.209647)
+speed_limit = 6.0
+
+[node name="Vehicle" parent="Lane12" unique_id=805820946 instance=ExtResource("4_s5kmm")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.1525574e-07, 0, -6)
+
+[node name="Lane11" parent="." unique_id=1798327891 instance=ExtResource("3_612c4")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, -10.254188)
+speed_limit = 3.0
+
+[node name="Vehicle" parent="Lane11" unique_id=1075556630 instance=ExtResource("4_s5kmm")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.1525574e-07, 0, -6)
+
+[node name="Lane6" parent="." unique_id=1469517544 instance=ExtResource("3_612c4")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, 2.7903528)
+speed_limit = 5.0
+
+[node name="Vehicle" parent="Lane6" unique_id=1169144745 instance=ExtResource("4_s5kmm")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.1525574e-07, 0, -6)
+
+[node name="Lane8" parent="." unique_id=991111990 instance=ExtResource("3_612c4")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, 8.790353)
+speed_limit = 3.0
+
+[node name="Vehicle" parent="Lane8" unique_id=1913868495 instance=ExtResource("4_s5kmm")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.1525574e-07, 0, -6)
+
+[node name="Lane3" parent="." unique_id=1823680363 instance=ExtResource("3_612c4")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, -5.209647)
 speed_limit = 14.0
 
@@ -62,10 +92,45 @@ speed_limit = 6.0
 [node name="Vehicle" parent="Lane" unique_id=405827139 instance=ExtResource("4_s5kmm")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.7683716e-07, 0, -9)
 
+[node name="Lane10" parent="." unique_id=613856464 instance=ExtResource("3_612c4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -9.209647)
+speed_limit = 8.0
+
+[node name="Vehicle" parent="Lane10" unique_id=955894004 instance=ExtResource("4_s5kmm")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.7683716e-07, 0, -9)
+
+[node name="Lane7" parent="." unique_id=1767226000 instance=ExtResource("3_612c4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 4.790353)
+speed_limit = 6.0
+
+[node name="Vehicle" parent="Lane7" unique_id=439381008 instance=ExtResource("4_s5kmm")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.7683716e-07, 0, -9)
+
+[node name="Lane5" parent="." unique_id=1095102487 instance=ExtResource("3_612c4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 3.7903528)
+speed_limit = 2.0
+
+[node name="Vehicle" parent="Lane5" unique_id=4069134 instance=ExtResource("4_s5kmm")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.7683716e-07, 0, -9)
+
+[node name="Lane9" parent="." unique_id=1819131696 instance=ExtResource("3_612c4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 9.790353)
+speed_limit = 6.0
+
+[node name="Vehicle" parent="Lane9" unique_id=538804397 instance=ExtResource("4_s5kmm")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.7683716e-07, 0, -9)
+
 [node name="Lane4" parent="." unique_id=1353546381 instance=ExtResource("3_612c4")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -4.209647)
 
 [node name="Vehicle" parent="Lane4" unique_id=1947038445 instance=ExtResource("4_s5kmm")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -5)
+
+[node name="Lane13" parent="." unique_id=299666579 instance=ExtResource("3_612c4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -14.975389)
+speed_limit = 5.5
+
+[node name="Vehicle" parent="Lane13" unique_id=495961568 instance=ExtResource("4_s5kmm")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -5)
 
 [node name="Ground" type="MeshInstance3D" parent="." unique_id=588138180]
@@ -74,9 +139,42 @@ mesh = SubResource("PlaneMesh_op42x")
 metadata/_edit_lock_ = true
 
 [node name="SpawningPoint" type="Node3D" parent="." unique_id=1040890674]
-transform = Transform3D(-0.9999951, 0, -0.00313535, 0, 1, 0, 0.00313535, 0, -0.9999951, 0, 0, 0)
+transform = Transform3D(-0.9999951, 0, -0.00313535, 0, 1, 0, 0.00313535, 0, -0.9999951, 0, 0, 12.790859)
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SpawningPoint" unique_id=1537486278]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0147095, 0)
 mesh = SubResource("CylinderMesh_wjah1")
+
+[node name="Waterway2" parent="." unique_id=880659296 instance=ExtResource("5_fvs1v")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+speed_limit = 7.0
+
+[node name="Vessel" parent="Waterway2" unique_id=2030516887 instance=ExtResource("6_udm81")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.7484555e-07, 0, 4)
+
+[node name="Waterway6" parent="." unique_id=1862011274 instance=ExtResource("5_fvs1v")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -12.172847)
+
+[node name="Vessel" parent="Waterway6" unique_id=222955646 instance=ExtResource("6_udm81")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.7484555e-07, 0, 4)
+
+[node name="Waterway3" parent="." unique_id=2003309164 instance=ExtResource("5_fvs1v")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, 1)
+speed_limit = 4.0
+
+[node name="Vessel" parent="Waterway3" unique_id=361368320 instance=ExtResource("6_udm81")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.7484555e-07, 0, 4)
+
+[node name="Waterway5" parent="." unique_id=475680245 instance=ExtResource("5_fvs1v")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, -8.236193)
+speed_limit = 5.0
+
+[node name="Vessel" parent="Waterway5" unique_id=1243594441 instance=ExtResource("6_udm81")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.7484555e-07, 0, 4)
+
+[node name="Waterway4" parent="." unique_id=218410092 instance=ExtResource("5_fvs1v")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, 7.695652)
+
+[node name="Vessel" parent="Waterway4" unique_id=608407149 instance=ExtResource("6_udm81")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.7484555e-07, 0, 4)

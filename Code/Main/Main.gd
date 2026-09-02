@@ -12,11 +12,9 @@ const WATER_WORLD = preload("res://Level/WaterWorld/WaterWorld.tscn")
 
 var duck: Duck
 
-var levels: Array[PackedScene] = [WATER_WORLD, TRAFFIC_TIME, SKY_WORLD]
+var levels: Array[PackedScene] = [TRAFFIC_TIME, SKY_WORLD, WATER_WORLD]
 var current_level = -1
 var level: Level = null
-
-
 
 
 func restart():
@@ -29,7 +27,7 @@ func restart():
 	
 	current_level = -1
 	next_level()
-	
+	print("restarting level")
 
 func next_level():
 	if level:
