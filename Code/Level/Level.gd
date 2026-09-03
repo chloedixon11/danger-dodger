@@ -23,6 +23,6 @@ func check_level_over() -> int:
 			print("Game not over")
 			return goals_remaining()
 	print("Game Over")
-	main.next_level()
+	#main.next_level()
 	return 0
 	#pause_menu.game_over("You Win!")
